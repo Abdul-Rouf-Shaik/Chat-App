@@ -6,12 +6,8 @@ const messagesRoutes = require("./routes/messagesRoutes");
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
-const PORT = process.env.CORS_ORIGIN || 3030;
 
-app.use(cors({
-    origin: process.env.CORS_ORIGIN,
-    credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", userRoutes);
@@ -21,14 +17,14 @@ mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log("connected to DB");
 }).catch((err) => console.log(err));
 
-const server = app.listen(PORT, () => {
-    console.log(`Listening to port ${PORT}`);
+const server = app.listen(process.env.PORT, () => {
+    console.log(`Listening to port ${process.env.PORT}`);
 });
 
 
 const io = socket(server, {
     cors: {
-        origin: process.env.CORS_ORIGIN,
+        origin: process.env.ORIGIN,
         credentials: true
     }
 });
