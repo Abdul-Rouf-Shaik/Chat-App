@@ -7,7 +7,10 @@ const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true
+}));
 app.use(express.json());
 
 app.use("/api/auth", userRoutes);
@@ -24,7 +27,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server, {
     cors: {
-        origin: process.env.ORIGIN,
+        origin: process.env.CORS_ORIGIN,
         credentials: true
     }
 });
