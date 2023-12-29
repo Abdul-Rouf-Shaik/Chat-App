@@ -38,7 +38,6 @@ export default function Chat() {
   useEffect(() => {
     async function help() {
       if (currUser) {
-        console.log(currUser);
         if (currUser.isAvatarImageSet) {
           const data = await axios.get(`${allUsersRoute}/${currUser._id}`);
           setContacts(data.data);
