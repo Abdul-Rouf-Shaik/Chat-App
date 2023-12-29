@@ -67,9 +67,9 @@ export default function ChatContainer({currChat, currUser, socket}) {
         arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
     }, [arrivalMessage]);
 
-    useEffect(() => {
-        // scrollRef.current?.scrollIntoView({behaviour: "smooth"});
-    }, [messages]);
+    // useEffect(() => {
+    //     scrollRef.current?.scrollIntoView({behaviour: "smooth"});
+    // }, [messages]);
 
   return (
     <>
