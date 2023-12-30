@@ -56,6 +56,17 @@ const Container = styled.div`
                 border: none;
                 padding: 0rem;
             }
+            @media screen and (min-width: 200px) and (max-width: 719px) {
+                .react-emoji-picker--container {
+                    top: -3px;
+                    left: 4.25rem;
+                    .react-emoji-picker--wrapper {
+                        height: 18.5rem ;
+                        width: 17rem;
+                        right: 0;
+                    }
+                }
+            }
             button {
                 svg {
                     font-size: 2rem;
