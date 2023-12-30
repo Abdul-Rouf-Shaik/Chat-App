@@ -59,7 +59,7 @@ const Container = styled.div`
             @media screen and (min-width: 200px) and (max-width: 719px) {
                 .react-emoji-picker--container {
                     top: -3px;
-                    left: 4.25rem;
+                    left: 4.12rem;
                     .react-emoji-picker--wrapper {
                         height: 18.5rem ;
                         width: 17rem;
