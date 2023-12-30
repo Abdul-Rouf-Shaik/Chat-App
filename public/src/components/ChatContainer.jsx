@@ -67,10 +67,7 @@ export default function ChatContainer({currChat, currUser, socket}) {
         arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);
     }, [arrivalMessage]);
 
-    // useEffect(() => {
-    //     scrollRef.current?.scrollIntoView({behaviour: "smooth"});
-    // }, [messages]);
-
+    
   return (
     <>
         {
@@ -97,15 +94,13 @@ export default function ChatContainer({currChat, currUser, socket}) {
                         {
                             messages.map((message) => {
                                 return (
-                                    <div ref={scrollRef} key={uuidv4()} >
-                                        <div className={`message ${message.fromSelf ? "sended" : "recieved"}`} >
-                                            <div className="content">
-                                                <p>
-                                                    {message.message}
-                                                </p>
-                                            </div>
-                                        </div> 
-                                    </div>
+                                    <div className={`message ${message.fromSelf ? "sended" : "recieved"}`} >
+                                        <div className="content">
+                                            <p>
+                                                {message.message}
+                                            </p>
+                                        </div>
+                                    </div> 
                                 )
                             })
                         }

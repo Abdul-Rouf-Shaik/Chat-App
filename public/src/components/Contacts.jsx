@@ -27,7 +27,7 @@ function Contacts({ contacts, currUser, changeChat, chatRef}) {
       let contact = contactsRef.current;
       contact.style.display = "none";
       let chatsContainer = document.querySelector(".chats-container");
-      chatsContainer.style.display = "block";
+      chatsContainer.style.display = "grid";
     }, 0);
   }
 
